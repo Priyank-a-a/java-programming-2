@@ -1,0 +1,112 @@
+Q1.Data structures are a way of storing and organizing data so that it can be used efficiently.
+
+Q2. Some applications of data structures include searching , sorting, deleting, updating and inserting the data.
+
+Q3. Advantages of linked lists over array are:
+a. it is dynamic in nature that is , it can shrink or grow depending uopn its size unlike array whose size cannot be changed.
+b. Insertion and deletion in linked lists is way more easier than in arrays.
+c. There is no requirement of declaring the size of linked lists prior to its use like in arrays.
+
+Q4. C program to create a new node in singly linked list.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node 
+{
+    int num;                        
+    struct node *nextptr;           
+}*stnode;
+
+void createNodeList(int n); 
+int main()
+{
+    int n=1;
+    createNodeList(n);
+    return 0;
+}
+void createNodeList(int n)
+{
+    struct node *fnNode, *tmp;
+    int num, i;
+    stnode = (struct node *)malloc(sizeof(struct node));
+
+    if(stnode == NULL) //check whether the fnnode is NULL and if so no memory allocation
+    {
+        printf(" Memory can not be allocated.");
+    }
+    else
+    {
+       printf(" Input data for the node  : ");
+        scanf("%d", &num);
+        stnode->num = num;      
+        stnode->nextptr = NULL; 
+        tmp = stnode;
+
+        for(i=2; i<=n; i++)
+        {
+            fnNode = (struct node *)malloc(sizeof(struct node));
+            if(fnNode == NULL)
+            {
+                printf(" Memory can not be allocated.");
+                break;
+            }
+            else
+            {
+                printf(" Input data for node %d : ", i);
+                scanf(" %d", &num);
+ 
+                fnNode->num = num;      
+                fnNode->nextptr = NULL; 
+ 
+                tmp->nextptr = fnNode; 
+                tmp = tmp->nextptr; 
+            }}}}
+
+
+Q5. The doubly linked list can be traversed backwards as well unlike singly linked list. hence doubly linked list can be used for this purpose.
+
+Q6. Differences between arrays and stack:
+a. Array stores elements in contagious locations where as stack uses First in last appraoch. 
+b. All the operations of stack have the complexity O(1) as there are no loops required where as arrays operations do require loops.
+c. In stack peek() and isEmpty() methods are there to get the topmost element and to check if the stack is empty respectively.
+
+Q7. Two queues are required to implement a priority queue. One queue store the data and the other one stores the priorities.
+
+Q8. Following are the different traversal techniques of trees:
+a. Preorder traversal : in this, the order of traversing the tree is Root node,left node and then right node.
+b. Postorder traversal : in this, the order of traversing the tree is Left node, right node and then root node.
+c. Inorder traversal : in this, the order of traversing the tree is left node, root node, right node.
+
+Q9. It is said that searching a node in binary search tree is easier than seraching it in a simple tree because BSTs have nodes in certain order. The element smaller than root element goes
+to its left side where as the element greater than it goes to its right side. Hence the process becomes easier.
+
+Q10. What are the applications of graph DS?
+  Some applications are:
+a. To find the shortest path between two points.
+b. For implementing certain algorithms for finding shortest path like Djkistra and Prim's algorithm.
+c. Resource allocation in operating systems is done using graphs.
+
+Q11. No we cannot apply Binary search algorithm on linked lists as there are no indices for the elements in linked lists like array.
+
+Q.12 When can you say that memory leak will occur?
+  When memory is created in heap but is not deleted or freed, memory leak will occur.
+
+Q13. To check if a binary tree is a binary search tree we need to check the values of the nodes. If the value in left node is lesser than root node's value and right node's value is
+greater than the root node's value, and also all the right and left trees follow this rule,then given binary tree is binary search tree.
+
+Q14. Stacks are used to implement recursion because in recursion the last function call is required to be made and as stack uses Last in First out technique for its elements, It is best 
+to perfrom recursion.
+
+Q15. Most important applications of stack include: 
+a. Coverting infix to postfix and prefix notation.
+b. for implementing recursion
+c. for parenthesis balancing
+
+
+
+
+
+
+
+
